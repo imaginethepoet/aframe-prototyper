@@ -28,15 +28,14 @@ position = y,y,z
 
 CHEAT SHEET -->
 
-<!-- This is for interchangable assets 
-      <a-assets>
-        <a-asset-item id="sky" src="img/grid-sky-1.png"></a-asset-item>
-        <a-asset-item id="floor" src="img/rock-floor.jpg"></a-asset-item>
-        <a-asset-item id="wall" src="img/red-leather.jpg"></a-asset-item>
-        <a-asset-item id="" src="img/red-leather.jpg"></a-asset-item>
-      </a-assets>
 
-This is for interchangable assets -->
+    <a-assets>
+        <img id="floor" src="materials/wood2.jpg">
+        <img id="ceiling" src="materials/concrete.jpg">
+        <img id="walls" src="materials/plaster2.png">
+        <img id="overlay" src="materials/overlays5.jpg">
+    </a-assets>
+
 
 
     <!-- Let's Setup A SkyBox
@@ -48,9 +47,23 @@ This is for interchangable assets -->
 
 <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
 <a-sound src="src: url(sound/sad.mp3)" autoplay="true" position="4.40 2.0 2.0"></a-sound>
-<a-entity environment="preset: forest; "></a-entity>
+
+
+
+
+
+<!--<a-entity environment="preset: forest; "></a-entity> -->
 <a-entity >
-<a-camera position="2.8 0 6"></a-camera>
+<a-camera position="2.8 0 6">
+  
+  <a-entity cursor="fuse: true; fuseTimeout: 500"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: #FFF; shader: flat">
+  </a-entity>
+
+
+</a-camera>
 </a-entity>
 
 
@@ -60,16 +73,16 @@ This is for interchangable assets -->
 
 
  <!-- We Need To Build Our Room Walls -->
-<rw-room position="-2 .5 -2" material="color:#eee">
+<rw-room position="-2 .5 -2"  material="color:#ffff00 src:#walls; repeat:.5 .5;">
 <rw-ceiling position="0 0 0" material="color:#ccc shader: flat;"></rw-ceiling>
-<rw-wall static-body position="8 0 0"  ></rw-wall>
+<rw-wall static-body position="8 0 0"></rw-wall>
 <rw-wall static-body position="8 0 8" ></rw-wall>
 <rw-wall static-body position="0 0 8" ></rw-wall>
-<rw-wall static-body position="0 0 0">
+<rw-wall static-body position="0 0 0" material="color:#FFFF00;   src:#walls;">
 <rw-doorhole id="holeA"></rw-doorhole>
 
 </rw-wall>
-<rw-floor static-body position="0 0 0"   material="color:#bdcaca">
+<rw-floor static-body position="0 0 0"   material="src:#floor; repeat:.5 .5;">
 <a-entity id="mementos" io3d-furniture="id:4e1a39df-89ff-40f4-9e19-107b9be5fbb9" position="5.2 0 2.5" rotation="0 45 0"></a-entity>
 <a-entity id="mementos2" io3d-furniture="id:456df8a4-b36c-4974-9c6f-a80562c27a70" position="4.49 0 2.19" rotation="0 65 0"></a-entity>
 <a-entity id="sofa" io3d-furniture="id:11d5fecd-45c3-4b3e-9fb1-9711f5fd2b1e" position=".70 0 5" rotation='0 90 0'></a-entity>
@@ -78,7 +91,7 @@ This is for interchangable assets -->
 <a-entity id="wall-photo" io3d-furniture="id:3c0e5f55-b2f4-4f4f-a6e1-f49600cf1707" position="0 0 5" rotation='0 90 0'></a-entity>
 <a-entity id="wall-art" io3d-furniture="id:da92a8df-a95e-48ae-b962-559128b60314" scale="4 1.5 1.5"  position="4.1 -.9 0"></a-entity>
 <a-entity id="tableandLamp" position="-.24 0 4.2" scale="1.8 1.8 1.8 " rotation='0 38 0'>
-<a-entity light="type: point; intensity: 0.75; distance: 30; decay: 10"
+<a-entity light="type: point; intensity: 0.75; distance: 50; decay: 10"
 position="3.06 0.48 1.06"></a-entity>
 <a-entity id="mag" io3d-furniture="id:32a5db5a-9451-4ead-8c9e-b758e8c72266" scale=".5 .5 .5" rotate="0 55 0" position="3.22 0.41 1.03" ></a-entity>
 <a-entity io3d-furniture="id:dfc06a24-532a-4ed0-a9b5-97c600fe0467" scale=".5 .5 .5" material_Wood:Black Walnut Tree" position="3.2 0 1"></a-entity>
