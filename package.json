@@ -1,0 +1,27 @@
+{
+  "name": "a-frame-prototyper",
+  "description": "A simple A-frame prototype system for mixed experiences",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "budo --live --verbose --port 3000 --open",
+    "deploy": "ghpages",
+    "ghpages": "ghpages"
+  },
+  "devDependencies": {
+    "budo": "^7.0.0",
+    "ghpages": "0.0.3"
+  },
+  "keywords": [
+    "aframe",
+    "aframe-example",
+    "aframe-boilerplate",
+    "aframe-scene",
+    "webvr",
+    "vr"
+  ],
+  "dependencies": {
+    "3dio": "^1.0.0-beta.65",
+    "aframe-room-component": "^0.2.0"
+  }
+}

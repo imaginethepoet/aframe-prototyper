@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mixed Reality Prototype Kit For A-frame</title>
+  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+  <script src="https://dist.3d.io/3dio-js/1.x.x-beta/3dio.min.js"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script> 
+
+<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.11.4/dist/aframe-extras.min.js"></script>
+  <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+
+
+</head>
+<body>
+
+
+
+
+<!-- Let's Create Our First Scene -->
+
+
+<!-- CHEAT SHEET 
+ 
+Rotation = x,y,z
+position = y,y,z
+
+
+CHEAT SHEET -->
+
+<!-- This is for interchangable assets 
+      <a-assets>
+        <a-asset-item id="sky" src="img/grid-sky-1.png"></a-asset-item>
+        <a-asset-item id="floor" src="img/rock-floor.jpg"></a-asset-item>
+        <a-asset-item id="wall" src="img/red-leather.jpg"></a-asset-item>
+        <a-asset-item id="" src="img/red-leather.jpg"></a-asset-item>
+      </a-assets>
+
+This is for interchangable assets -->
+
+
+    <!-- Let's Setup A SkyBox
+      <a-sky src="#sky"></a-sky>
+    Let's Setup A SkyBox -->
+
+
+
+
+<a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+<a-sound src="src: url(sound/sad.mp3)" autoplay="true" position="4.40 2.0 2.0"></a-sound>
+<a-entity environment="preset: forest; "></a-entity>
+<a-entity >
+<a-camera position="2.8 0 6"></a-camera>
+</a-entity>
+
+
+
+  <!-- furniture specified by furniture id -->
+  <!-- get more: https://furniture.3d.io -->
+
+
+ <!-- We Need To Build Our Room Walls -->
+<rw-room position="-2 .5 -2" material="color:#eee">
+<rw-ceiling position="0 0 0" material="color:#ccc shader: flat;"></rw-ceiling>
+<rw-wall static-body position="8 0 0"  ></rw-wall>
+<rw-wall static-body position="8 0 8" ></rw-wall>
+<rw-wall static-body position="0 0 8" ></rw-wall>
+<rw-wall static-body position="0 0 0">
+<rw-doorhole id="holeA"></rw-doorhole>
+
+</rw-wall>
+<rw-floor static-body position="0 0 0"   material="color:#bdcaca">
+<a-entity id="mementos" io3d-furniture="id:4e1a39df-89ff-40f4-9e19-107b9be5fbb9" position="5.2 0 2.5" rotation="0 45 0"></a-entity>
+<a-entity id="mementos2" io3d-furniture="id:456df8a4-b36c-4974-9c6f-a80562c27a70" position="4.49 0 2.19" rotation="0 65 0"></a-entity>
+<a-entity id="sofa" io3d-furniture="id:11d5fecd-45c3-4b3e-9fb1-9711f5fd2b1e" position=".70 0 5" rotation='0 90 0'></a-entity>
+<a-entity id="artwall" io3d-furniture="id:bc1e971a-b055-42ab-ab2f-f549a0d84684" position="8 -1.2 2" scale="1.5 2 1.5" rotation='0 -90 0'></a-entity>
+<a-entity id="mirror" io3d-furniture="id:d96b0fb2-ed6c-43a7-b69a-230a16b717f8" position="8 0 5" rotation='0 -90 0'></a-entity>
+<a-entity id="wall-photo" io3d-furniture="id:3c0e5f55-b2f4-4f4f-a6e1-f49600cf1707" position="0 0 5" rotation='0 90 0'></a-entity>
+<a-entity id="wall-art" io3d-furniture="id:da92a8df-a95e-48ae-b962-559128b60314" scale="4 1.5 1.5"  position="4.1 -.9 0"></a-entity>
+<a-entity id="tableandLamp" position="-.24 0 4.2" scale="1.8 1.8 1.8 " rotation='0 38 0'>
+<a-entity light="type: point; intensity: 0.75; distance: 30; decay: 10"
+position="3.06 0.48 1.06"></a-entity>
+<a-entity id="mag" io3d-furniture="id:32a5db5a-9451-4ead-8c9e-b758e8c72266" scale=".5 .5 .5" rotate="0 55 0" position="3.22 0.41 1.03" ></a-entity>
+<a-entity io3d-furniture="id:dfc06a24-532a-4ed0-a9b5-97c600fe0467" scale=".5 .5 .5" material_Wood:Black Walnut Tree" position="3.2 0 1"></a-entity>
+<a-entity id="lamp" io3d-furniture="id:5fca0e29-4b4b-4ab2-a30b-3bae3d8fc54d" scale=".5 .5 .5" position="3.0 .4 1"></a-entity>
+</a-entity>
+<a-entity id="bookcase" io3d-furniture="id:840d6d49-9342-4689-b783-2d51423e037a" position=".30 0 2" rotation='0 90 0' scale="2"></a-entity>
+
+<a-entity id="rug" io3d-furniture="id:97c75572-9b90-446f-9c99-86d4eced6aeb"  rotation="0 90 0 " position="1.84 .50 2.09" scale="3.12 0.22 2.26" material_color:Tangerine" ></a-entity>
+
+
+</rw-room>
+
+
+<rw-room position="0 0 6.9" outside="true" >
+            <rw-wall position=" 1 0 -1" material="color:#787"></rw-wall>
+            <rw-wall position=" 1 0  1" material="color:#877">
+                <rw-doorhole id="holeB"></rw-doorhole>
+            </rw-wall>
+            <rw-wall position="-1 0  1" material="color:#878"></rw-wall>
+            <rw-wall position="-1 0 -1" material="color:#778"></rw-wall>
+ </rw-room>
+
+
+<!-- Add Objects To Our Construction -->
+<!-- You can augment this with furniture from the search link in readme 
+<a-entity io3d-furniture="id:f4473d26-280e-405e-8afc-244a0e9a6022" position="2 2 0" scale="1 1 1"></a-entity>-->
+
+
+</a-scene>
+
+
+
+</body>
+</html>
