@@ -25,11 +25,20 @@ Using magic voxel you can do some really great quick simple 3d models and get a 
 4. Look in index.html and you will see more information and commented section.
 
 
-A NUMBER OF 3D RESOURRCES
+
+PERSPECTIVE SKETCHING:
+
+https://www.pinterest.com/mmatatula/teaching-perspective/?lp=true
+https://www.pinterest.com/pin/25755029091352935/
 
 
 
-Finding Models & Resources
+
+
+
+
+3D Models Textures & Resources
+
 GoogleBlocks
 Sketchfab
 Clara.io
