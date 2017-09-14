@@ -9,6 +9,7 @@
 
 <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.11.4/dist/aframe-extras.min.js"></script>
   <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+  <!--<script src="https://unpkg.com/aframe-cubemap-component@0.1.2/dist/aframe-cubemap-component.min.js"></script>-->
 
 
 <!-- CUSTOM SCRIPT HERE -->
@@ -44,6 +45,8 @@ CHEAT SHEET -->
         <img id="walls" src="materials/plaster3.jpg">
         <img id="overlay" src="materials/overlays5.jpg">
         <img id="brick" src="materials/brick3.jpg">
+        <img id="junejpg" src="img/june.jpg">
+
 
         <a-asset-item id="window-obj" src="models/window.obj"></a-asset-item>
 
@@ -59,13 +62,15 @@ CHEAT SHEET -->
 
 
 <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
-<a-sound src="src: url(sound/sad.mp3)" autoplay="true" position="4.40 2.0 2.0"></a-sound>
 
+<!--
+<a-sound src="src: url(sound/sad.mp3)" autoplay="true" position="4.40 2.0 2.0"></a-sound>
+-->
 
 
 
 <!--
-<a-entity environment="preset: forest; skytType:atmosphere  lighting:distant "></a-entity> 
+<a-entity environment="preset: forest; lighting:spot; lightPosition: 10 10 1.2; ground:hills; "></a-entity> 
 
 -->
 
@@ -76,18 +81,18 @@ CHEAT SHEET -->
 
 
 
+
   <!-- furniture specified by furniture id -->
   <!-- get more: https://furniture.3d.io -->
 
 
  <!-- We Need To Build Our Room Walls -->
 <rw-room position="-2 .5 -2">
-<rw-ceiling position="0 0 0" material="src:#ceiling; repeat:.4 .4;"></rw-ceiling>
+<rw-ceiling position="0 0 0" material="src:#ceiling; repeat:.2 .2;"></rw-ceiling>
 <rw-wall static-body position="8 0 0" material="src:#walls; repeat:.4 .4;"></rw-wall>
 <rw-wall static-body position="8 0 8" material="src:#walls; repeat:.4 .4;" ></rw-wall>
 <rw-wall static-body position="0 0 8" material=" src:#brick; repeat:.4 .4;" ></rw-wall>
 <rw-wall static-body position="0 0 0" material="color:#FFFF00;   src:#walls;">
-<rw-doorhole id="holeA"></rw-doorhole>
 
 </rw-wall>
 <rw-floor static-body position="0 0 0"   material="src:#floor; repeat:.5 .5;">
@@ -113,21 +118,19 @@ position="3.06 0.48 1.06"></a-entity>
 
 
 
-        <a-entity id="window"  obj-model="obj: #window-obj; mtl: #vwindow-obj-mtl" position="7.13 -0.04 5.20" scale=".08 .05 .05" rotation="0 90 0"></a-entity>
+      <a-image id="image" position=".02 1.2 6.61"
+      rotation="0 90 0 " scale="0.15 .15 .15" width="4" depth="3" height="3" color="#ffffff"
+      opacity="0.96" shader="standard" side="double" src="#junejpg" metalness="0.24" roughness="1"
+      repeat="1 1" visible="true"></a-image>
+
+
+ <a-entity id="window"  obj-model="obj: #window-obj; mtl: #vwindow-obj-mtl" position="7.13 -0.04 5.20" depth="5" scale=".08 .05 .05" rotation="0 90 0"></a-entity>
+
 
 
 
 </rw-room>
 
-
-<rw-room position="0 0 6.9" outside="true" >
-            <rw-wall position=" 1 0 -1" material="color:#787"></rw-wall>
-            <rw-wall position=" 1 0  1" material="color:#877">
-                <rw-doorhole id="holeB"></rw-doorhole>
-            </rw-wall>
-            <rw-wall position="-1 0  1" material="color:#878"></rw-wall>
-            <rw-wall position="-1 0 -1" material="color:#778"></rw-wall>
- </rw-room>
 
 
 
@@ -136,10 +139,18 @@ position="3.06 0.48 1.06"></a-entity>
 <!-- You can augment this with furniture from the search link in readme 
 <a-entity io3d-furniture="id:f4473d26-280e-405e-8afc-244a0e9a6022" position="2 2 0" scale="1 1 1"></a-entity>-->
 
-<a-entity id="rug" io3d-furniture="id:97c75572-9b90-446f-9c99-86d4eced6aeb"  rotation="0 90 0 " position="2.40 .50 1.88" scale="3.12 0.22 2.26" material_color:Tangerine" ></a-entity>
+<a-entity id="rug" io3d-furniture="id:97c75572-9b90-446f-9c99-86d4eced6aeb"  rotation="0 90 0 " position="2.20 .50 1.08" scale="3.12 0.22 2.26" material_color:Tangerine" ></a-entity>
+
 
 
 </a-scene>
+
+
+<!-- SLIDE ON STORY ARC-->
+
+
+
+  
 
 
 

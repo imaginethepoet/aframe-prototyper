@@ -24,3 +24,24 @@ Using magic voxel you can do some really great quick simple 3d models and get a 
 3. This is based on the awesome a-frame framework
 4. Look in index.html and you will see more information and commented section.
 
+
+A NUMBER OF 3D RESOURRCES
+
+
+
+Finding Models & Resources
+GoogleBlocks
+Sketchfab
+Clara.io
+Archive3D
+Sketchup’s 3D Warehouse
+TurboSquid
+Remix3D
+NounProject
+Pinterest Inspiration
+http://texturer.com/
+http://www.texturemate.com/
+http://www.1000skies.com/
+https://www.smashingmagazine.com/2009/02/100-beautiful-free-textures/
+http://webvrstudio.com/ (ottifox)
+http://www.ucreative.com/
